@@ -1,0 +1,24 @@
+.active_tab {
+    background: #FACC15;
+    color: black;
+    border: #FACC15;
+}
+.form{
+    display: none;
+    width: 100%;
+    animation:  mouving 0.5s ease-in-out;
+}
+
+@keyframes mouving {
+    from{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.form.active {
+    display: block;
+}
