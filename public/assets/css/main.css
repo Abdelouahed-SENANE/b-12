@@ -22,3 +22,12 @@
 .form.active {
     display: block;
 }
+
+/*===== Upload  Button =====*/
+.upload {
+    display: none;
+}
+
+.upload_img:hover  .upload {
+    display: block;
+}

@@ -12,4 +12,5 @@ class Driver extends Model
     {
         return $this->hasOne(User::class);
     }
+
 }

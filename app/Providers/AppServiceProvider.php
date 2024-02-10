@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Driver;
 use App\Models\Passenger;
 use App\Models\User;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,6 +34,9 @@ class AppServiceProvider extends ServiceProvider
                 return false;
             }
         });
+        Blade::if('admin' , function () {
+            return auth()->user()->can('admin');
+        });
         Gate::define('passenger', function (User $user) {
             $passenger = Passenger::where('user_id' , $user->id)->get();
             if (sizeof($passenger) ) {
@@ -41,6 +45,9 @@ class AppServiceProvider extends ServiceProvider
                 return false;
             }
         });
+        Blade::if('passenger' , function () {
+            return auth()->user()->can('passenger');
+        });
         Gate::define('driver', function (User $user) {
             $driver = Driver::where('user_id', $user->id)->get();
             if (sizeof($driver)) {
@@ -48,6 +55,9 @@ class AppServiceProvider extends ServiceProvider
             } else {
                 return false;
             }
+        });
+        Blade::if('driver' , function () {
+            return auth()->user()->can('driver');
         });
     }
 }

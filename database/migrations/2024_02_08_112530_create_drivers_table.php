@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('registration');
             $table->string('type_car');
+            $table->string('type_payment')->nullable();
             $table->enum('available', [1 , 0])->default(0);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

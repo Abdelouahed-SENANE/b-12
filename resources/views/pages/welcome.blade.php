@@ -1,11 +1,11 @@
 
 @extends('layouts.layout')
 @section('content')
-    <section class="">
+    <section class="relative">
         @include('components.navigation')
         <div class="relative h-[calc(100vh-72px)] bg-cover bg-center" style="background-image: url('assets/images/landing.jpg')">
             <div class="bg-black opacity-50 w-full h-full absolute left-0 top-0"></div>
-            <div class="relative text-white h-full w-full flex items-center justify-center">
+            <div class="relative text-white h-full w-full flex items-center  justify-center">
                 <div class="max-w-[700px] text-center">
                     <h1 class="text-6xl font-semibold mb-6">
                          Ultimate Transportation Solution

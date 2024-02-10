@@ -22,7 +22,6 @@
                         <div class="text-rose-500 bg-red-500/10 rounded-xl text-sm p-5">
                             <p class="my-2 font-semibold text-lg">Somethings wrong!</p>
                             <ul class="ml-7">
-
                                 @foreach($errors->all() as $error)
                                     <li class="list-disc">
                                         {{ $error }}
@@ -30,7 +29,6 @@
                                 @endforeach
                             </ul>
                         </div>
-
                     @endif
                     <div>
                         <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize ">

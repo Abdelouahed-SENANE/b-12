@@ -21,6 +21,7 @@
     <script src="https://kit.fontawesome.com/d0fb25e48c.js" crossorigin="anonymous"></script>
 {{--    ============ JS Files ========= --}}
     <script defer src="{{ asset('assets/js/app.js') }}"></script>
+
 </head>
 <body class="font-[inter]">
 @yield('content')

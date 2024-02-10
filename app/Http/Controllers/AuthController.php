@@ -98,7 +98,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             if (Gate::allows('admin')) {
 //              dd(Auth::user()->role);
-                return redirect('/dashboard');
+                return redirect('/admin/dashboard');
             } else if (Gate::allows('passenger')) {
                 return redirect('/mytrips');
             } else {
