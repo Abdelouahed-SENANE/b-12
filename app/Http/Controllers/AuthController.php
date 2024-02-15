@@ -66,6 +66,7 @@ class AuthController extends Controller
             $driver->description = $request->description;
             $driver->registration = $request->registration;
             $driver->type_car = $request->type_car;
+            $driver->type_payment = $request->mode;
             $driver->save();
 
         return redirect('/');
@@ -100,9 +101,9 @@ class AuthController extends Controller
 //              dd(Auth::user()->role);
                 return redirect('/admin/dashboard');
             } else if (Gate::allows('passenger')) {
-                return redirect('/mytrips');
+                return redirect('/passenger/dashboard');
             } else {
-                return redirect('/mytrajets');
+                return redirect('/driver/dashboard');
             }
         }
         return back()->withErrors([

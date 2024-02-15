@@ -12,4 +12,8 @@ class Passenger extends Model
     {
         return $this->hasOne(User::class);
     }
+    public function reservation()
+    {
+        return $this->hasOne(Reservation::class);
+    }
 }

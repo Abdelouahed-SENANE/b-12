@@ -66,6 +66,10 @@ class AdminController extends Controller
         $user->password = $request->password;
         $user->save();
         return back();
+
+    }
+    public function reservation() {
+
     }
     public function reservations()
     {
@@ -75,8 +79,18 @@ class AdminController extends Controller
 
     public function users()
     {
+        $users = User::with(['admin' , 'driver' , 'passenger'])->get();
 
-        return view('admin.users');
+        $data = [
+            'users' => $users
+        ];
+        return view('admin.users' , $data);
+    }
+//    ==== Delete User ====
+    public function delete_user($id) {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/admin/users')->with('User Deleted Succefully');
     }
 
     public function routes()

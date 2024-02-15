@@ -13,4 +13,8 @@ class Driver extends Model
         return $this->hasOne(User::class);
     }
 
+    public function routes()
+    {
+        return $this->belongsToMany(Route::class);
+    }
 }

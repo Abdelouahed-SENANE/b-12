@@ -31,3 +31,29 @@
 .upload_img:hover  .upload {
     display: block;
 }
+
+
+.linktab:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #FACC15;
+    width: 0%;
+    height: 3px;
+    transition: width 0.3s ease;
+}
+.linktab.active:before {
+    width: 100%;
+}
+.linktab.active {
+    color: #1a202c;
+    background: #fff !important;
+}
+
+.content {
+    display: none;
+}
+.content.active {
+    display: block;
+}

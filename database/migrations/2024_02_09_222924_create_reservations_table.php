@@ -16,6 +16,7 @@ return new class extends Migration
             $table->enum('status' , [1 , 0])->default(0);
             $table->foreignId('driver_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('passenger_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('route_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

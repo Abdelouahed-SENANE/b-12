@@ -22,4 +22,5 @@ class Reservation extends Model
     {
         return $this->hasOne(Route::class);
     }
+
 }
